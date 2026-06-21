@@ -36,7 +36,7 @@ export function registerTools(server: McpServer) {
      )
 
      server.registerTool(
-          "discribe_table",
+          "describe_table",
           {
                description: "Show columns, types, and constraints for a table.",
                inputSchema: z.object({ tableName: z.string() })

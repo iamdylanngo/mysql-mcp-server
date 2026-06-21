@@ -20,7 +20,7 @@ export function registerTools(server) {
             content: [{ type: "text", text: JSON.stringify(rows, null, 2) }],
         };
     });
-    server.registerTool("discribe_table", {
+    server.registerTool("describe_table", {
         description: "Show columns, types, and constraints for a table.",
         inputSchema: z.object({ tableName: z.string() })
     }, async ({ tableName }) => {

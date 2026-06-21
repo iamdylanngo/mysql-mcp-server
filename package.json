@@ -1,16 +1,16 @@
 {
-  "name": "mcp",
+  "name": "mysql-mcp-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "MySQL MCP Server",
+  "main": "./build/index.js",
   "scripts": {
-    "test": "node build/index.js",
+    "dev": "node build/index.js",
     "build": "tsc && chmod 755 build/index.js",
     "mcp": "npx @modelcontextprotocol/inspector node --env-file=.env build/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["MySQL MCP Server"],
+  "author": "iamdylanngo",
+  "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "mysql2": "^3.22.5",
@@ -23,7 +23,7 @@
   },
   "type": "module",
   "bin": {
-    "weather": "./build/index.js"
+    "mysql-mcp-server": "./build/index.js"
   },
   "files": [
     "build"
