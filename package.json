@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "node build/index.js",
     "build": "tsc && chmod 755 build/index.js",
+    "pack": "mcpb pack . release/mysql-mcp-server-v1.0.0.mcpb",
+    "build:bundle": "npm run build && npm run pack",
     "mcp": "npx @modelcontextprotocol/inspector node --env-file=.env build/index.js"
   },
   "keywords": ["MySQL MCP Server"],
@@ -17,6 +19,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@anthropic-ai/mcpb": "^2.1.2",
     "@modelcontextprotocol/inspector": "^0.22.0",
     "@types/node": "^25.9.3",
     "typescript": "^6.0.3"
