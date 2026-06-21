@@ -75,7 +75,7 @@ Add the following to your `claude_desktop_config.json`:
   "mcpServers": {
     "mysql": {
       "command": "node",
-      "args": ["/absolute/path/to/mcp/build/index.js"],
+      "args": ["/[absolute-path]/mysql-mcp-server/build/index.js"],
       "env": {
         "DB_HOST": "127.0.0.1",
         "DB_PORT": "3306",
