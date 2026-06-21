@@ -24,7 +24,7 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that c
 **1. Clone and install dependencies**
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/iamdylanngo/mysql-mcp-server
 cd mcp
 npm install
 ```
