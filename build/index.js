@@ -1,0 +1,18 @@
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { registerTools } from './tool.js';
+import { closePool } from './db.js';
+const server = new McpServer({ name: 'mysql-mcp', version: '1.0.0' });
+registerTools(server);
+async function shutdown() {
+    await closePool();
+    process.exit();
+}
+process.on("SIGINT", shutdown);
+process.on("SIGTERM", shutdown);
+async function main() {
+    const transport = new StdioServerTransport();
+    await server.connect(transport);
+}
+main();
+//# sourceMappingURL=index.js.map
