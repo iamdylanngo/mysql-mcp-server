@@ -1,0 +1,106 @@
+{
+  "manifest_version": "0.3",
+  "name": "mysql-mcp-server",
+  "display_name": "MySQL MCP Server",
+  "version": "1.0.1",
+  "icon": "icon.png",
+  "description": "Connect Claude to a MySQL database. Inspect schemas and run read/write queries.",
+  "long_description": "A local MCP server that connects Claude to a MySQL database over a connection pool. Provides tools to inspect schemas, run SELECT queries, and execute INSERT/UPDATE/DELETE statements.",
+  "author": {
+    "name": "iamdylanngo",
+    "url": "https://github.com/iamdylanngo/mysql-mcp-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamdylanngo/mysql-mcp-server.git"
+  },
+  "license": "MIT",
+  "keywords": ["mysql", "database", "sql", "query"],
+  "server": {
+    "type": "node",
+    "entry_point": "build/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/build/index.js"],
+      "env": {
+        "DB_HOST": "${user_config.db_host}",
+        "DB_PORT": "${user_config.db_port}",
+        "DB_USER": "${user_config.db_user}",
+        "DB_PASSWORD": "${user_config.db_password}",
+        "DB_NAME": "${user_config.db_name}",
+        "DB_POOL_LIMIT": "${user_config.db_pool_limit}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "select_mysql_version",
+      "description": "Returns the connected MySQL server version."
+    },
+    {
+      "name": "list_tables",
+      "description": "Lists all tables in the connected database."
+    },
+    {
+      "name": "describe_table",
+      "description": "Shows columns, types, and constraints for a given table."
+    },
+    {
+      "name": "query",
+      "description": "Runs a read-only SELECT query with optional ? placeholder params."
+    },
+    {
+      "name": "mutate",
+      "description": "Runs an INSERT, UPDATE, or DELETE statement with optional params."
+    }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "user_config": {
+    "db_host": {
+      "type": "string",
+      "title": "Database Host",
+      "description": "MySQL server hostname or IP address.",
+      "required": true,
+      "default": "127.0.0.1"
+    },
+    "db_port": {
+      "type": "string",
+      "title": "Database Port",
+      "description": "MySQL server port.",
+      "required": true,
+      "default": "3306"
+    },
+    "db_user": {
+      "type": "string",
+      "title": "Database User",
+      "description": "MySQL username.",
+      "required": true,
+      "default": "root"
+    },
+    "db_password": {
+      "type": "string",
+      "title": "Database Password",
+      "description": "MySQL password.",
+      "required": false,
+      "sensitive": true
+    },
+    "db_name": {
+      "type": "string",
+      "title": "Database Name",
+      "description": "Name of the database to connect to.",
+      "required": true
+    },
+    "db_pool_limit": {
+      "type": "string",
+      "title": "Connection Pool Limit",
+      "description": "Maximum number of connections in the pool.",
+      "required": false,
+      "default": "10"
+    }
+  }
+}
