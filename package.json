@@ -1,12 +1,12 @@
 {
   "name": "mysql-mcp-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MySQL MCP Server",
   "main": "./build/index.js",
   "scripts": {
     "dev": "node build/index.js",
     "build": "tsc && chmod 755 build/index.js",
-    "pack": "mcpb pack . release/mysql-mcp-server-v1.0.1.mcpb",
+    "pack": "mcpb pack . release/mysql-mcp-server-v1.0.2.mcpb",
     "build:bundle": "npm run build && npm run pack",
     "mcp": "npx @modelcontextprotocol/inspector node --env-file=.env build/index.js"
   },

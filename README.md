@@ -19,7 +19,42 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that c
 - Node.js 18+
 - A running MySQL instance
 
-## Setup
+## Quick Install (Recommended)
+
+### 1. Download the plugin
+
+Go to the [Releases](https://github.com/iamdylanngo/mysql-mcp-server/releases) page and download the latest `.mcpb` file (e.g. `mysql-mcp-server-v1.0.1.mcpb`).
+
+### 2. Install the plugin
+
+**Via Claude Code CLI:**
+
+```bash
+claude plugin install mysql-mcp-server-v1.0.1.mcpb
+```
+
+**Via Claude Desktop:**
+
+Double-click the `.mcpb` file — Claude Desktop will prompt you to install it.
+
+### 3. Configure your database connection
+
+After installation, Claude will prompt you to fill in your connection details:
+
+| Field | Default | Description |
+|-------|---------|-------------|
+| Database Host | `127.0.0.1` | MySQL hostname or IP |
+| Database Port | `3306` | MySQL port |
+| Database User | `root` | MySQL username |
+| Database Password | _(empty)_ | MySQL password |
+| Database Name | _(required)_ | Database to connect to |
+| Connection Pool Limit | `10` | Max concurrent connections |
+
+You can update these settings at any time in Claude's plugin settings under **MySQL MCP Server**.
+
+---
+
+## Manual Setup (from source)
 
 **1. Clone and install dependencies**
 

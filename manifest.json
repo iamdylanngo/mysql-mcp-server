@@ -1,8 +1,8 @@
 {
-  "manifest_version": "0.3",
+  "manifest_version": "0.4",
   "name": "mysql-mcp-server",
   "display_name": "MySQL MCP Server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icon": "icon.png",
   "description": "Connect Claude to a MySQL database. Inspect schemas and run read/write queries.",
   "long_description": "A local MCP server that connects Claude to a MySQL database over a connection pool. Provides tools to inspect schemas, run SELECT queries, and execute INSERT/UPDATE/DELETE statements.",
